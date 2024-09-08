@@ -45,7 +45,7 @@ const PreHome = () => {
       </div>
     );
   } else if (youWin) {
-    return <Win setStartGame={setStartGame} score={score} />;
+    return <Win setStartGame={setStartGame} score={score} setYouWin={setYouWin}/>;
   } else if (!youWin) {
     return (
       <Home

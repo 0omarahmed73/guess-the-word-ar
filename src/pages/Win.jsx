@@ -4,7 +4,7 @@ import CustomButton from "../components/CustomButton";
 import { useState } from "react";
 import Home from "./Home";
 
-const Win = ({ setStartGame, score }) => {
+const Win = ({ setStartGame, score , setYouWin}) => {
   return (
     <div className="h-screen w-screen bg-white">
       <div className="container mx-auto flex justify-center items-center h-screen flex-col">
@@ -17,7 +17,12 @@ const Win = ({ setStartGame, score }) => {
               النتيجة: {score}
             </p>
           </div>
-          <CustomButton type="success" onClick={() => setStartGame(false)}>
+          <CustomButton type="success" onClick={
+            () => {
+              setStartGame(false);
+              setYouWin(false);
+            }
+          }>
             المحاولة مرة اخرى؟
           </CustomButton>
         </div>
