@@ -11,14 +11,14 @@ const Win = ({ setStartGame, score }) => {
         <div className="max-w-lg mx-auto flex justify-center items-center h-screen flex-col">
           <div className="flex flex-col gap-2 justify-center items-center">
             <h1 className="text-green-500 text-center sm:text-5xl font-bold text-3xl">
-              Congratulations You Won! 🎉
+              تهانياً لقد فزت! 🎉
             </h1>
             <p className="text-green-500 text-center sm:text-2xl font-bold">
-              Your Score is {score}
+              النتيجة: {score}
             </p>
           </div>
           <CustomButton type="success" onClick={() => setStartGame(false)}>
-            Try Again?
+            المحاولة مرة اخرى؟
           </CustomButton>
         </div>
       </div>

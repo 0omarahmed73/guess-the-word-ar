@@ -182,11 +182,17 @@ const Home = ({
   }, [choosenLetters]);
 
   useEffect(() => {
+    console.log("Checking win/lose conditions.");
+    console.log("wordsToMap:", wordsToMap);
+    console.log("score:", score);
+
     if (wordsToMap.length === 0) {
       if (score > 0) {
+        console.log("You win condition met!");
         startGame(false);
         youWin(true);
       } else {
+        console.log("You lose condition met.");
         startGame(false);
         setYouLose(true);
       }

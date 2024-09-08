@@ -17,7 +17,8 @@ const PreHome = () => {
   useEffect(() => {
     setWords(words);
   }, [youWin, startGame]);
-  if (!startGame) {
+  console.log(youWin)
+  if (!startGame && !youWin) {
     return (
       <div className="h-screen w-screen bg-white">
         <div className="container mx-auto flex justify-center items-center h-screen flex-col">
