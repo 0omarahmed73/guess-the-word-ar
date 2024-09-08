@@ -19,6 +19,7 @@ const Home = ({
   setYouLose,
 }) => {
   /* --------States-------- */
+  const [currentWordNumber, setCurrentWordNumber] = useState(1);
   let [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [currentWord, setCurrentWord] = useState(
@@ -117,6 +118,7 @@ const Home = ({
     removeSuccessLetters();
     setCurrentIndex(1);
     setNext(false);
+    setCurrentWordNumber((d) => d + 1);
     setChances(5);
 
     // Update the word list, removing the current word
@@ -204,6 +206,9 @@ const Home = ({
         <div className="max-w-lg bg-white rounded-lg m-auto flex flex-col justify-center items-center gap-3 min-h-screen px-7">
           <div className="chances w-full flex flex-row justify-between mb-5">
             <p className="text-end font-bold">المحاولات المتبقية: {chances}</p>
+            <p className="text-center font-bold">
+              {currentWordNumber}/{words.length}
+            </p>
             <p className="text-end font-bold">النتيجة: {score}</p>
           </div>
           <div className="chances w-full">
